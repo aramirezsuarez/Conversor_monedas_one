@@ -11,7 +11,7 @@ public class Consultas {
 
     public double buscaMonedas(String tipoMoneda, String tipoMoneda2){
         
-        URI direccion = URI.create(" https://v6.exchangerate-api.com/v6/64ede90a6a3e66a76a0deda5/latest" + tipoMoneda);
+        URI direccion = URI.create(" https://v6.exchangerate-api.com/v6/64ede90a6a3e66a76a0deda5/latest/" + tipoMoneda);
         
         HttpClient client = HttpClient.newHttpClient();
 
