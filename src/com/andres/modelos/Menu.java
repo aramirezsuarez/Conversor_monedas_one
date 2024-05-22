@@ -2,7 +2,7 @@
 package com.andres.modelos;
 
 public class Menu {
-    public void Mensaje(){
+    public void mensaje(){
         System.out.println("""
                 ********************************************//**********************************************************
                 Sea Bienvenido(a) al conversor de monedas
@@ -13,12 +13,11 @@ public class Menu {
                 5) Conversor de Dolar ==> Peso Colombiano.
                 6) Conversor de Peso Colombiano ==> Dolar.
                 7) Salir
-                 ********************************************//**********************************************************
-                 ¿Que Opcion Desea Elegir?==>""");
+                ********************************************//**********************************************************
+                ¿Que Opcion Desea Elegir?""");
     }
     public void mensaje2(){
-        System.out.println("""
-                ¿Cuanta Cantidad Desea que Realice la conversion?""");
+        System.out.println("¿Cuanta Cantidad Desea que Realice la conversion?");
     }
 
 

@@ -3,18 +3,12 @@ package com.andres.modelos;
 import java.util.Scanner;
 
 public class Conversion {
-    Menu menu = new Menu();
-    Scanner lectura = new Scanner(System.in);
-    Consultas consulta = new Consultas();
+    private final Menu menu = new Menu();
+    private final Scanner lectura = new Scanner(System.in);
+    private final Consultas consulta = new Consultas();
 
-    public int cantidad;
-    public String tipoMoneda;
-    public String tipoMoneda2;
-    private double moneda;
-    private float valorConvertido;
-
-    public float ConvertirMoneda(int valor) {
-        switch (valor) {
+    public double convertirMoneda(int opcion) {
+        switch (opcion) {
             case 1:
                 return realizarConversion("USD", "ARS");
             case 2:
@@ -31,18 +25,17 @@ public class Conversion {
                 System.out.println("FINALIZANDO EL PROGRAMA...");
                 return 7;
             default:
+                System.out.println("Haz ingresado un valor no valido de la lista...");
                 return 0;
         }
     }
 
-    private float realizarConversion(String monedaOrigen, String monedaDestino) {
+    private double realizarConversion(String monedaOrigen, String monedaDestino) {
         menu.mensaje2();
-        cantidad = lectura.nextInt();
-        tipoMoneda = monedaOrigen;
-        tipoMoneda2 = monedaDestino;
-        moneda = consulta.buscaMonedas(tipoMoneda, tipoMoneda2);
-        valorConvertido = (float) (moneda * cantidad);
-        System.out.println("El valor " + cantidad + " [" + tipoMoneda + "]" + " Corresponde al valor final de ==>" + valorConvertido + " [" + tipoMoneda2 + "]");
+        double cantidad = Double.parseDouble(lectura.nextLine());
+        double moneda = consulta.buscaMonedas(monedaOrigen, monedaDestino);
+        double valorConvertido = (moneda * cantidad);
+        System.out.println("El valor " + cantidad + " [" + monedaOrigen + "]" + " corresponde al valor final de ==> " + valorConvertido + " [" + monedaDestino + "]");
         return valorConvertido;
     }
 }
